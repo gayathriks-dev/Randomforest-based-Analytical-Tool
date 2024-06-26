@@ -1,0 +1,16 @@
+{% extends 'base.html' %} {% block title %}Download Reports{% endblock %} {%
+block content %}
+<section>
+  <h2>Download Reports</h2>
+  <ul>
+    <li>
+      <a href="{{ url_for('download_pdf', accuracy=accuracy) }}"
+        >Download PDF Report</a
+      >
+    </li>
+    <li>
+      <a href="{{ model_report_url }}">Download Model Report CSV</a>
+    </li>
+  </ul>
+</section>
+{% endblock %}

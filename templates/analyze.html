@@ -1,0 +1,31 @@
+{% extends 'base.html' %} {% block title %}Analyze{% endblock %} {% block
+content %}
+<section class="analyze">
+  <div class="container">
+    <h2>Analyze Data</h2>
+    <form method="POST" action="{{ url_for('analyze') }}">
+      <input type="hidden" name="filename" value="{{ filename }}" />
+      <label for="x_axis">X-axis:</label>
+      <select name="x_axis" required>
+        {% for title in titles %}
+        <option value="{{ title }}">{{ title }}</option>
+        {% endfor %}
+      </select>
+      <label for="y_axis">Y-axis:</label>
+      <select name="y_axis" required>
+        {% for title in titles %}
+        <option value="{{ title }}">{{ title }}</option>
+        {% endfor %}
+      </select>
+      <label for="chart_type">Chart Type:</label>
+      <select name="chart_type" required>
+        <option value="scatter">Scatter</option>
+        <option value="line">Line</option>
+        <option value="bar">Bar</option>
+        <option value="box">Box</option>
+      </select>
+      <input type="submit" value="Analyze" />
+    </form>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %} {% block title %}Result - Athena{% endblock %} {%
+block content %}
+<div>
+  <h2>Analysis Result</h2>
+  <p>Accuracy (RMSE): {{ accuracy }}</p>
+  <p><img src="{{ plot_url }}" alt="Plot" /></p>
+  <p>
+    <a
+      href="{{ url_for('download_pdf', accuracy=accuracy) }}"
+      class="btn btn-primary"
+      >Download PDF Report</a
+    >
+  </p>
+</div>
+{% endblock %}

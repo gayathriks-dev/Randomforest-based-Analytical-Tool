@@ -1,0 +1,34 @@
+{% extends 'base.html' %} {% block title %}Patient Dashboard{% endblock %} {%
+block content %}
+<section class="dashboard">
+  <div class="container">
+    <h2>Patient Dashboard</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Condition</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for patient in patients %}
+        <tr>
+          <td>{{ patient.name }}</td>
+          <td>{{ patient.age }}</td>
+          <td>{{ patient.condition }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <ul>
+      {% for patient in patients %}
+      <li>
+        {{ patient.name }} - {{ patient.age }} years old - {{ patient.condition
+        }}
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+{% endblock %}
